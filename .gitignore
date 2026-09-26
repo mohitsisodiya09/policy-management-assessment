@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Runtime / local data
+uploads/
+coverage/
+*.log
+pm2*.log
+.npm
+
+# OS / IDE (personal)
+.DS_Store
+.idea/
+*.swp
+*.swo
+
+# VS Code — ignore personal/local files; only share listed workspace defaults
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json

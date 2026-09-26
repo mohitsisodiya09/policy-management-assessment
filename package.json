@@ -1,0 +1,71 @@
+{
+  "name": "policy-management-assessment",
+  "version": "1.0.0",
+  "description": "Node.js policy management API — CSV/XLSX ingest, search, aggregation, CPU monitor, scheduled messages",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "prepare": "husky",
+    "prestart": "node scripts/check-node-version.js",
+    "start": "node src/server.js",
+    "dev": "nodemon",
+    "lint": "prettier --check . && eslint .",
+    "lint:fix": "prettier --write . && eslint . --fix",
+    "pm2:start": "pm2 start ecosystem.config.cjs",
+    "pm2:stop": "pm2 stop policy-management-api"
+  },
+  "lint-staged": {
+    "*.{js,mjs}": [
+      "eslint --fix --max-warnings=0",
+      "prettier --write"
+    ],
+    "*.cjs": [
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "keywords": [
+    "policy",
+    "mongodb",
+    "express",
+    "worker-threads"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^6.0.1",
+    "compression": "^1.8.2",
+    "cors": "^2.8.5",
+    "csv-parse": "^5.6.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^8.7.0",
+    "helmet": "^8.0.0",
+    "mongoose": "^8.9.5",
+    "multer": "^2.4.0",
+    "node-cron": "^3.0.3",
+    "pino": "^9.6.0",
+    "pino-http": "^10.4.0",
+    "semver": "^7.8.5",
+    "xlsx": "^0.18.5",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.3",
+    "@commitlint/config-conventional": "^21.2.3",
+    "@eslint/js": "^9.18.0",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^15.14.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
+    "nodemon": "^3.1.9",
+    "pino-pretty": "^13.0.0",
+    "prettier": "^3.9.9"
+  }
+}
