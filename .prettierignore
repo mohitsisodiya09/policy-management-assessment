@@ -1,0 +1,11 @@
+node_modules
+uploads
+coverage
+package-lock.json
+.env
+.env.*
+!.env.example
+*.log
+pm2*.log
+*.postman_collection.json
+*.postman_environment.json
